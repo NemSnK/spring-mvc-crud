@@ -31,7 +31,7 @@ public class UsersController {
     }
 
     @GetMapping("/new")
-    public String newUser(Model model) {
+    public String showNewUserForm(Model model) {
         model.addAttribute("user", new User());
         return "new";
     }
@@ -45,7 +45,7 @@ public class UsersController {
     }
 
     @GetMapping("/{id}/edit")
-    public String editUser(Model model, @PathVariable("id") Long id) {
+    public String showEditUserForm(Model model, @PathVariable("id") Long id) {
         model.addAttribute("user", userService.getUserById(id));
         return "/edit";
     }
